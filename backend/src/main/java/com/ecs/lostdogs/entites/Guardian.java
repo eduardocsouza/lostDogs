@@ -11,14 +11,12 @@ import java.util.Objects;
 public class Guardian implements Serializable {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @PrimaryKeyJoinColumn(name = "guardian_id")
     private Long id;
     private String name;
     private String number;
 
-    @OneToMany(mappedBy = "guardian")
-    private List<Dog> dog = new ArrayList<>();
 
     public Guardian() {
     }
@@ -50,12 +48,6 @@ public class Guardian implements Serializable {
 
     public void setNumber(String number) {
         this.number = number;
-    }
-
-    public List<Dog> getDog() { return dog; }
-
-    public void addDog(Dog dog){
-        this.dog.add(dog);
     }
 
 

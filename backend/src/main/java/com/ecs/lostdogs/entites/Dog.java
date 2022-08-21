@@ -1,5 +1,7 @@
 package com.ecs.lostdogs.entites;
 
+import lombok.NonNull;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
@@ -9,31 +11,32 @@ import java.util.Objects;
 public class Dog implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @PrimaryKeyJoinColumn(name = "dog_id")
     private Long id;
+    @Column(name = "name", nullable = false)
     private String name;
+    @Column(name = "breed", nullable = false)
     private String breed;
+    @Column(name = "age", nullable = false)
     private String age;
 
     @ManyToOne
-    @JoinColumn(name = "guardian_id")
     private Guardian guardian;
 
 //    @ManyToOne
 //    @JoinColumn(name = "doctor_id")
 //    private Doctor doctor;
 
-    public Dog() {
-    }
+//    public Dog() {
+//    }
 
-    public Dog(String name, String breed, String age, Guardian guardian){
-        this.name = name;
-        this.breed = breed;
-        this.age = age;
-        this.guardian = guardian;
-//        this.doctor = doctor;
-//        , Guardian guardian, Doctor doctor
-    }
+//    public Dog(String name, String breed, String age, Guardian guardian){
+//        this.name = name;
+//        this.breed = breed;
+//        this.age = age;
+//        this.guardian = guardian;
+////        this.doctor = doctor;
+////        , Guardian guardian, Doctor doctor
+//    }
 
 
     public Long getId() {

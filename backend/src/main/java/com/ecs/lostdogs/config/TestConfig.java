@@ -29,12 +29,12 @@ public class TestConfig implements CommandLineRunner {
         Doctor doctor = new Doctor("Mario", "CRM_12334");
         Guardian guardian = new Guardian("Eduardo", "81984493777");
 
-        Dog dog = new Dog("Toto", "Pasto Alemao", "5", guardian);
+//        Dog dog = new Dog("Toto", "Pasto Alemao", "5", guardian);
 
 
 
         doctorRepository.save(doctor);
         guardianRepository.save(guardian);
-        dogRepository.save(dog);
+//        dogRepository.save(dog);
     }
 }
