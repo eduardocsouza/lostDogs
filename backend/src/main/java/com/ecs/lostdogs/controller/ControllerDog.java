@@ -21,9 +21,8 @@ public class ControllerDog {
     }
 
     @PostMapping("/add")
-    public Dog addDog(@RequestBody Dog dog, Guardian guardian){
-        Dog dg = new Dog(dog.getName(), dog.getBreed(), dog.getAge(), guardian);
-        return services.saveDog(dg);
+    public Dog addDog(@RequestBody Dog dog){
+        return services.saveDog(dog);
     }
 
     @GetMapping("/{id}")
