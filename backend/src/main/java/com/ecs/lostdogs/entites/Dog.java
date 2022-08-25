@@ -22,6 +22,8 @@ public class Dog implements Serializable {
     @ManyToOne
     private Guardian guardian;
 
+
+
 //    @ManyToOne
 //    @JoinColumn(name = "doctor_id")
 //    private Doctor doctor;
@@ -29,14 +31,14 @@ public class Dog implements Serializable {
 //    public Dog() {
 //    }
 
-//    public Dog(String name, String breed, String age, Guardian guardian){
-//        this.name = name;
-//        this.breed = breed;
-//        this.age = age;
-//        this.guardian = guardian;
-////        this.doctor = doctor;
-////        , Guardian guardian, Doctor doctor
-//    }
+    public Dog(String name, String breed, String age, Guardian guardian){
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
+        this.guardian = guardian;
+//        this.doctor = doctor;
+//        , Guardian guardian, Doctor doctor
+    }
 
 
     public Long getId() {

@@ -1,8 +1,10 @@
 package com.ecs.lostdogs.config;
 
+import com.ecs.lostdogs.entites.Attendance;
 import com.ecs.lostdogs.entites.Doctor;
 import com.ecs.lostdogs.entites.Dog;
 import com.ecs.lostdogs.entites.Guardian;
+import com.ecs.lostdogs.repository.AttendanceRepository;
 import com.ecs.lostdogs.repository.DoctorRepository;
 import com.ecs.lostdogs.repository.DogRepository;
 import com.ecs.lostdogs.repository.GuardianRepository;
@@ -24,17 +26,22 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private DogRepository dogRepository;
 
+    @Autowired
+    private AttendanceRepository attendanceRepository;
+
     @Override
     public void run(String... args) throws Exception {
         Doctor doctor = new Doctor("Mario", "CRM_12334");
         Guardian guardian = new Guardian("Eduardo", "81984493777");
 
-//        Dog dog = new Dog("Toto", "Pasto Alemao", "5", guardian);
+        Dog dog = new Dog("Toto", "Pasto Alemao", "5", guardian);
+        Attendance attendance = new Attendance(dog, doctor);
 
 
 
         doctorRepository.save(doctor);
         guardianRepository.save(guardian);
-//        dogRepository.save(dog);
+        dogRepository.save(dog);
+        attendanceRepository.save(attendance);
     }
 }
